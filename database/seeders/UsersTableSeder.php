@@ -13,7 +13,7 @@ class UsersTableSeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('users')->insert(
+        DB::table('users')->insert([
             [
             "name"=> "admin",
             "username"=> "admin",
@@ -38,6 +38,7 @@ class UsersTableSeder extends Seeder
             "role"=> 'user',
             "status"=> 'active',
             ],
+        ]
     );
     }
 }
