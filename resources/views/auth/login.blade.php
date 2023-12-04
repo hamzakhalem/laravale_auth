@@ -7,7 +7,7 @@
 
         <!-- Email Address -->
         <div>
-            <x-input-label for="logini" :value="__('Email/Phone/Username')" />
+            <x-input-label for="login" :value="__('Email/Phone/Username')" />
             <x-text-input id="login" class="block mt-1 w-full" type="text" name="login" :value="old('login')" required autofocus autocomplete="username" />
         </div>
 
