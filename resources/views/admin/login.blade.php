@@ -18,22 +18,22 @@
   <!-- End fonts -->
 
 	<!-- core:css -->
-	<link rel="stylesheet" href="{{ asset('assets/vendors/core/core.css') }}">
+	<link rel="stylesheet" href="{{ asset('backend/assets/vendors/core/core.css') }}">
 	<!-- endinject -->
 
 	<!-- Plugin css for this page -->
 	<!-- End plugin css for this page -->
 
 	<!-- inject:css -->
-	<link rel="stylesheet" href="{{ asset('assets/fonts/feather-font/css/iconfont.css') }}">
-	<link rel="stylesheet" href="{{ asset('assets/vendors/flag-icon-css/css/flag-icon.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('backend/assets/fonts/feather-font/css/iconfont.css') }}">
+	<link rel="stylesheet" href="{{ asset('backend/assets/vendors/flag-icon-css/css/flag-icon.min.css') }}">
 	<!-- endinject -->
 
   <!-- Layout styles -->  
-	<link rel="stylesheet" href="{{ asset('assets/css/demo2/style.css') }}">
+	<link rel="stylesheet" href="{{ asset('backend/assets/css/demo2/style.css') }}">
   <!-- End layout styles -->
 
-  <link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }}" />
+  <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.png') }}" />
   <style>
     .my-auth-side-wrapper{
         width: 100%;
@@ -94,14 +94,14 @@
 	</div>
 
 	<!-- core:js -->
-	<script src="{{ asset('assets/vendors/core/core.js') }}"></script>
+	<script src="{{ asset('backend/assets/vendors/core/core.js') }}"></script>
 	<!-- endinject -->
 
 
 
 	<!-- inject:js -->
-	<script src="{{ asset('assets/vendors/feather-icons/feather.min.js') }}"></script>
-	<script src="{{ asset('assets/js/template.js') }}"></script>
+	<script src="{{ asset('backend/assets/vendors/feather-icons/feather.min.js') }}"></script>
+	<script src="{{ asset('backend/assets/js/template.js') }}"></script>
 	<!-- endinject -->
 
 	<!-- Custom js for this page -->
