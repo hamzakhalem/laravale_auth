@@ -1,5 +1,6 @@
 @extends('admin.dashboard')
 @section('admin')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <div class="page-content">
 
         <div class="row profile-body">
@@ -54,29 +55,42 @@
                         <div class="card">
                             <div class="card-body">
 
-                                <h6 class="card-title">Basic Form</h6>
+                                <h6 class="card-title">Update Profile</h6>
 
                                 <form class="forms-sample">
                                     <div class="mb-3">
                                         <label for="exampleInputUsername1" class="form-label">Username</label>
                                         <input type="text" class="form-control" id="exampleInputUsername1"
-                                            autocomplete="off" placeholder="Username">
+                                            autocomplete="off" placeholder="Username" name="username" value='{{$profileData->username  }}'>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">Name:</label>
+                                        <input type="name" class="form-control" id="exampleInputname1"
+                                            placeholder="Name" name="name" value='{{$profileData->name}}'>
                                     </div>
                                     <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label">Email address</label>
                                         <input type="email" class="form-control" id="exampleInputEmail1"
-                                            placeholder="Email">
+                                            placeholder="Email" name="email" value='{{$profileData->email}}'>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                                        <input type="password" class="form-control" id="exampleInputPassword1"
-                                            autocomplete="off" placeholder="Password">
+                                        <label for="exampleInputEmail1" class="form-label">Phone</label>
+                                        <input type="text" class="form-control" id="exampleInputEmail1"
+                                            placeholder="0000" name="phone" value='{{$profileData->phone}}'>
                                     </div>
-                                    <div class="form-check mb-3">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                        <label class="form-check-label" for="exampleCheck1">
-                                            Remember me
-                                        </label>
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">Address</label>
+                                        <input type="text" class="form-control" id="exampleInputEmail1"
+                                            placeholder="0000" name="adress" value='{{$profileData->adress}}'>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">Photo</label>
+                                        <input type="file" class="form-control" id="photoId"
+                                            placeholder="0000" name="photo" '>
+                                    </div>  
+                                    <div class="mb-3">
+                                    <img id="showImg" class="wd-80 rounded-circle" src="{{ asset(!empty($profileData->photo)?
+                                        url('upload/admin_images/'.$profileData->photo): url('upload/no_image.jpg'))   }}" alt="profile">
                                     </div>
                                     <button type="submit" class="btn btn-primary me-2">Submit</button>
                                     <button class="btn btn-secondary">Cancel</button>
@@ -95,4 +109,16 @@
         </div>
 
     </div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $('#photoId').change(function(e){
+        var reader = new FileReader();
+        reader.onload = function(e){
+            $('#showImg').attr('src', e.target.result);
+        }
+        reader.readAsDataURL(e.target.files['0']);
+    })
+});
+</script>
 @endsection
