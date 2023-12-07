@@ -58,7 +58,7 @@
                                 <h6 class="card-title">Update Profile</h6>
 
                                 <form class="forms-sample" method="POST" action={{ route('admin.profile.store') }}
-                                    enctype="multipart/from-data"
+                                    enctype="multipart/form-data"
                                 >
                                     @csrf
                                     <div class="mb-3">
