@@ -57,7 +57,10 @@
 
                                 <h6 class="card-title">Update Profile</h6>
 
-                                <form class="forms-sample">
+                                <form class="forms-sample" method="POST" action={{ route('admin.profile.store') }}
+                                    enctype="multipart/from-data"
+                                >
+                                    @csrf
                                     <div class="mb-3">
                                         <label for="exampleInputUsername1" class="form-label">Username</label>
                                         <input type="text" class="form-control" id="exampleInputUsername1"
@@ -86,7 +89,7 @@
                                     <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label">Photo</label>
                                         <input type="file" class="form-control" id="photoId"
-                                            placeholder="0000" name="photo" '>
+                                            name="photo" >
                                     </div>  
                                     <div class="mb-3">
                                     <img id="showImg" class="wd-80 rounded-circle" src="{{ asset(!empty($profileData->photo)?
