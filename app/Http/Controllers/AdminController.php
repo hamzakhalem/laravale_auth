@@ -21,7 +21,6 @@ class AdminController extends Controller
         return redirect('/admin/login');
     }
     public function AdminLogin(){
-
         return view('admin.login');
     }
     public function AdminProfile(){
@@ -40,13 +39,16 @@ class AdminController extends Controller
 
         if($request->file('photo')!==null){
             $file = $request->file('photo');
+            @unlink(public_path('upload/admin/'.$Data->photo));
             $filename = date('Ymdi').$file->getClientOriginalName();
             $file->move(public_path('upload/admin'), $filename);
-            $Data['photo'] = $filename;
-        
+            $Data->photo = $filename;
         }
-        $Data->phone = $filename;
+        $notif = array(
+            'message' => "Updated correctelly",
+            'alert-type' => 'success' ,
+        );
         $Data->save();
-        return redirect()->back();
+        return redirect()->back()->with($notif);
     }
 }

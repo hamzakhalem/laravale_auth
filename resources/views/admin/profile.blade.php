@@ -12,7 +12,7 @@
                         <div class="d-flex align-items-center justify-content-between mb-2">
                             <div>
                                 <img class="wd-100 rounded-circle" src="{{ asset(!empty($profileData->photo)?
-                                 url('upload/admin_images/'.$profileData->photo): url('upload/no_image.jpg'))   }}" alt="profile">
+                                 url('upload/admin/'.$profileData->photo): url('upload/no_image.jpg'))   }}" alt="profile">
                                 <span class="h4 ms-3 ">{{ $profileData->username }}</span>
                             </div>
                         </div>
@@ -92,8 +92,8 @@
                                             name="photo" >
                                     </div>  
                                     <div class="mb-3">
-                                    <img id="showImg" class="wd-80 rounded-circle" src="{{ asset(!empty($profileData->photo)?
-                                        url('upload/admin_images/'.$profileData->photo): url('upload/no_image.jpg'))   }}" alt="profile">
+                                        <img id="showImg" class="wd-80 rounded-circle" src="{{ asset(!empty($profileData->photo)?
+                                            url('upload/admin/'.$profileData->photo): url('upload/no_image.jpg'))   }}" alt="profile">
                                     </div>
                                     <button type="submit" class="btn btn-primary me-2">Submit</button>
                                     <button class="btn btn-secondary">Cancel</button>
