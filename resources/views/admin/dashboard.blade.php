@@ -36,7 +36,7 @@
 
   <link rel="shortcut icon" href="{{ asset('../backend/assets/images/favicon.png') }}" />
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
-     
+  <link rel="stylesheet" href="{{ asset('../backend/assets/vendors/datatables.net-bs5/dataTables.bootstrap5.css')}}">
 
 </head>
 <body>
@@ -80,6 +80,11 @@
   <script src=" {{ asset('../backend/assets/js/dashboard-dark.js') }}"></script>
 	<!-- End custom js for this page -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+		<!-- Plugin js for this page -->
+	<script src="{{ asset('../backend/assets/vendors/datatables.net/jquery.dataTables.js')}}"></script>
+	<script src="{{ asset('../backend/assets/vendors/datatables.net-bs5/dataTables.bootstrap5.js')}}"></script>
+	<script src="{{ asset('../backend/assets/js/data-table.js')}}"></script>
+		<!-- End plugin js for this page -->
 	<script>
 	  @if(Session::has('message'))
 	  var type = "{{ Session::get('alert-type','info') }}"

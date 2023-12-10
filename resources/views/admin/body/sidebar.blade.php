@@ -28,7 +28,7 @@
             <div class="collapse" id="emails">
             <ul class="nav sub-menu">
                 <li class="nav-item">
-                <a href="{{ all.type }}" class="nav-link">All types</a>
+                <a href="{{ route('all.type') }}" class="nav-link">All types</a>
                 </li>
                 <li class="nav-item">
                 <a href="pages/email/read.html" class="nav-link">Add type</a>
