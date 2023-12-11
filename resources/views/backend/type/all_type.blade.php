@@ -6,7 +6,7 @@
 
 				<nav class="page-breadcrumb">
 					<ol class="breadcrumb">
-                        <a href="" class="btn btn-inverse-info">Add Proprety Type</a>
+                        <a href="{{ route('add.type') }}" class="btn btn-inverse-info">Add Proprety Type</a>
 
 					</ol>
 				</nav>
