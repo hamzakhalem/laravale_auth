@@ -20,17 +20,35 @@ class PropertyTypeController extends Controller
         $request->validate([
             'type_name' => 'required|unique:proprety_types', 
             'type_icon' => 'required', 
-         ]);
+        ]);
         PropretyType::insert([
             'type_name'=>$request->type_name,
             'type_icon'=>$request->type_icon,
-
+            
         ]);
-         $notif = array(
+        $notif = array(
             'message' => "Proprrty type created successfully ",
             'alert-type' => 'success' ,
         );
-
+        
+        return redirect()->route('all.type')->with($notif);
+    }
+    function EditType($id){
+        $type = PropretyType::findOrFail($id);
+        return view('backend.type.edit_type', compact('type'));
+    }
+    function UpdateType(Request $request){
+        $id = $request->id;
+        $type = PropretyType::findOrFail($id)->update([
+            'type_name'=>$request->type_name,
+            'type_icon'=>$request->type_icon,
+            
+        ]);
+        $notif = array(
+            'message' => "Proprrty type updated successfully ",
+            'alert-type' => 'success' ,
+        );
+        
         return redirect()->route('all.type')->with($notif);
     }
 }
