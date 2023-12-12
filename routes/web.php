@@ -59,3 +59,15 @@ Route::middleware(['auth','role:admin'])->group(function () {
 
     });
 });
+Route::middleware(['auth','role:admin'])->group(function () {
+
+    Route::controller(PropertyTypeController::class)->group(function(){
+        Route::get('/all/amenitis/',  'AllAmenitis')->name('all.amenitis');
+        Route::get('/add/amenitis/',  'AddAmenitis')->name('add.amenitis');
+        Route::post('/store/amenitis/',  'StoreAmenitis')->name('store.amenitis');
+        Route::get('/edit/amenitis/{id}',  'Editamenitis')->name('edit.amenitis');
+        Route::get('/delete/amenitis/{id}',  'Deleteamenitis')->name('delete.amenitis');
+        Route::post('/update/amenitis/',  'UpdateType')->name('update.type');
+
+    });
+});
