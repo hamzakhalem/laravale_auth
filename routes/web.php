@@ -67,7 +67,7 @@ Route::middleware(['auth','role:admin'])->group(function () {
         Route::post('/store/amenitis/',  'StoreAmenitis')->name('store.amenitis');
         Route::get('/edit/amenitis/{id}',  'Editamenitis')->name('edit.amenitis');
         Route::get('/delete/amenitis/{id}',  'Deleteamenitis')->name('delete.amenitis');
-        Route::post('/update/amenitis/',  'UpdateType')->name('update.type');
+        Route::post('/update/amenitis/',  'UpdateAmenitis')->name('update.amenitis');
 
     });
 });

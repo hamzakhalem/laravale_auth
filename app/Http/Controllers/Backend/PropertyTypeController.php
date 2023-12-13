@@ -34,10 +34,6 @@ class PropertyTypeController extends Controller
         
         return redirect()->route('all.type')->with($notif);
     }
-    function EditType($id){
-        $type = PropretyType::findOrFail($id);
-        return view('backend.type.edit_type', compact('type'));
-    }
     function DeleteType($id){
         PropretyType::findOrFail($id)->delete();
         $notif = array(
@@ -62,6 +58,7 @@ class PropertyTypeController extends Controller
         return redirect()->route('all.type')->with($notif);
     }
 
+    
     function AllAmenitis(){
         $amenities = Amenities::latest()->get();
         return view('backend.aminitis.all_aminitis', compact('amenities'));
@@ -70,12 +67,38 @@ class PropertyTypeController extends Controller
         return view('backend.aminitis.add_aminitis');
     }
     function StoreAmenitis(Request $request){
-
+        
         Amenities::insert([
             'amenitis_name'=>$request->amenitis_name,
         ]);
         $notif = array(
             'message' => "Amenities  created successfully ",
+            'alert-type' => 'success' ,
+        );
+        
+        return redirect()->route('all.amenitis')->with($notif);
+    }
+    function Editamenitis($id){
+        $amenitis = Amenities::findOrFail($id);
+        return view('backend.aminitis.edit_aminitis', compact('amenitis'));
+    }
+
+    function UpdateAmenitis(Request $request){
+        $id = $request->id;
+        $type = Amenities::findOrFail($id)->update([
+            'amenitis_name'=>$request->amenitis_name,      
+        ]);
+        $notif = array(
+            'message' => "Amintis updated successfully ",
+            'alert-type' => 'success' ,
+        );
+        
+        return redirect()->route('all.amenitis')->with($notif);
+    }
+    function Deleteamenitis($id){
+        Amenities::findOrFail($id)->delete();
+        $notif = array(
+            'message' => "Aminities deleted successfully ",
             'alert-type' => 'success' ,
         );
         
