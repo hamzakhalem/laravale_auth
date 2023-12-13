@@ -21,7 +21,7 @@
                                     <div class="mb-3 form-group">
                                         <label for="exampleInputUsername1" class="form-label"> Name</label>
                                         <input type="text" class="form-control" 
-                                            autocomplete="off" name="aminitis_name" >
+                                            autocomplete="off" name="amenitis_name" >
                                     </div>
 
 
@@ -43,13 +43,13 @@
         $(document).ready(function (){
             $('#myForm').validate({
                 rules: {
-                    aminitis_name: {
+                    amenitis_name: {
                         required : true,
                     }, 
                     
                 },
                 messages :{
-                    aminitis_name: {
+                    amenitis_name: {
                         required : 'Please Enter FieldName',
                     }, 
                      

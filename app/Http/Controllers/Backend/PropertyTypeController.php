@@ -70,9 +70,7 @@ class PropertyTypeController extends Controller
         return view('backend.aminitis.add_aminitis');
     }
     function StoreAmenitis(Request $request){
-        $request->validate([
-            'type_aminitis' => 'required|unique:proprety_types',  
-        ]);
+
         Amenities::insert([
             'amenitis_name'=>$request->amenitis_name,
         ]);
