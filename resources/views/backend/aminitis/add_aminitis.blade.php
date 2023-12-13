@@ -14,20 +14,18 @@
 
                                 <h6 class="card-title">Add Aminitis</h6>
 
-                                <form class="forms-sample" method="POST" action="{{ route('store.amenitis') }}"
+                                    <form id='myForm' class="forms-sample" method="POST" action={{ route('store.amenitis') }}
                                     enctype="multipart/form-data"
                                 >
                                     @csrf
-                                    <div class="mb-3">
-                                        <label for="exampleInputUsername1" class="form-label">Type Name</label>
-                                        <input type="text" class="form-control  
-                                             @error('aminitis_name') is_invalid @enderror" 
+                                    <div class="mb-3 form-group">
+                                        <label for="exampleInputUsername1" class="form-label"> Name</label>
+                                        <input type="text" class="form-control" 
                                             autocomplete="off" name="aminitis_name" >
                                     </div>
 
 
                                     <button type="submit" class="btn btn-primary me-2">Submit</button>
-                                    <button class="btn btn-secondary">Cancel</button>
                                 </form>
 
                             </div>
@@ -41,4 +39,35 @@
 
     </div>
 
+    <script type="text/javascript">
+        $(document).ready(function (){
+            $('#myForm').validate({
+                rules: {
+                    aminitis_name: {
+                        required : true,
+                    }, 
+                    
+                },
+                messages :{
+                    aminitis_name: {
+                        required : 'Please Enter FieldName',
+                    }, 
+                     
+    
+                },
+                errorElement : 'span', 
+                errorPlacement: function (error,element) {
+                    error.addClass('invalid-feedback');
+                    element.closest('.form-group').append(error);
+                },
+                highlight : function(element, errorClass, validClass){
+                    $(element).addClass('is-invalid');
+                },
+                unhighlight : function(element, errorClass, validClass){
+                    $(element).removeClass('is-invalid');
+                },
+            });
+        });
+        
+    </script>
 @endsection

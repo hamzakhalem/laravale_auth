@@ -110,6 +110,7 @@
 	 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 		 <script src="{{ asset('../backend/assets/js/code/code.js') }}"></script>
-
+		 <script src="{{ asset('../backend/assets/js/code/validate.min.js') }}"></script>
+	 	
 </body>
 </html>    
