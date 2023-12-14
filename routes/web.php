@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\Backend\PropertyTypeController;
+use App\Http\Controllers\Backend\RoleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -63,6 +64,15 @@ Route::middleware(['auth','role:admin'])->group(function () {
 
     Route::controller(PropertyTypeController::class)->group(function(){
         Route::get('/all/amenitis/',  'AllAmenitis')->name('all.amenitis');
+        Route::get('/add/amenitis/',  'AddAmenitis')->name('add.amenitis');
+        Route::post('/store/amenitis/',  'StoreAmenitis')->name('store.amenitis');
+        Route::get('/edit/amenitis/{id}',  'Editamenitis')->name('edit.amenitis');
+        Route::get('/delete/amenitis/{id}',  'Deleteamenitis')->name('delete.amenitis');
+        Route::post('/update/amenitis/',  'UpdateAmenitis')->name('update.amenitis');
+
+    });
+    Route::controller(RoleController::class)->group(function(){
+        Route::get('/all/permission/',  'AllPermission')->name('all.permission');
         Route::get('/add/amenitis/',  'AddAmenitis')->name('add.amenitis');
         Route::post('/store/amenitis/',  'StoreAmenitis')->name('store.amenitis');
         Route::get('/edit/amenitis/{id}',  'Editamenitis')->name('edit.amenitis');
