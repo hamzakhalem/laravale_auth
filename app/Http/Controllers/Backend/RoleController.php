@@ -18,6 +18,8 @@ class RoleController extends Controller
     public function AddPermission(){
         return view('backend.permission.add_permission'); 
     }
+    
+
     public function StorePermission(Request $request){
         Permission::create([
             'name'=>$request->permission_name,
@@ -25,6 +27,15 @@ class RoleController extends Controller
         ]);
         $notif = array(
             'message' => "Permission  created successfully ",
+            'alert-type' => 'success' ,
+        );
+        
+        return redirect()->route('all.permission')->with($notif);
+    }
+    public function Deletepermission($id){
+        Permission::findOrFail($id)->delete();
+        $notif = array(
+            'message' => "Permission deleted successfully ",
             'alert-type' => 'success' ,
         );
         

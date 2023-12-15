@@ -76,7 +76,7 @@ Route::middleware(['auth','role:admin'])->group(function () {
         Route::get('/add/permission/',  'AddPermission')->name('add.permission');
         Route::post('/store/permission/',  'StorePermission')->name('store.permission');
         Route::get('/edit/amenitis/{id}',  'Editamenitis')->name('edit.amenitis');
-        Route::get('/delete/amenitis/{id}',  'Deleteamenitis')->name('delete.amenitis');
+        Route::get('/delete/permission/{id}',  'Deletepermission')->name('delete.permission');
         Route::post('/update/amenitis/',  'UpdateAmenitis')->name('update.amenitis');
 
     });
