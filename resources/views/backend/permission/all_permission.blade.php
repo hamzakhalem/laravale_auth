@@ -10,7 +10,7 @@
             &nbsp;&nbsp;
             <a href="{{ route('import.permission') }}" class="btn btn-inverse-warning">Import</a>
             &nbsp;&nbsp;
-            <a href="{{ route('add.permission') }}" class="btn btn-inverse-danger">Export</a>
+            <a href="{{ route('export.permission') }}" class="btn btn-inverse-danger">Export</a>
 					</ol>
 				</nav>
 

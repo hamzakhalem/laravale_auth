@@ -5,7 +5,7 @@
         <nav class="page-breadcrumb">
             <ol class="breadcrumb">
 
-                <a href="{{ route('add.permission') }}" class="btn btn-inverse-danger">Download xlsx</a>
+                <a href="{{ route('export.permission') }}" class="btn btn-inverse-danger">Download xlsx</a>
             </ol>
         </nav>
 
