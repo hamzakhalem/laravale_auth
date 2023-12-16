@@ -18,6 +18,7 @@ class RoleController extends Controller
     public function AddPermission(){
         return view('backend.permission.add_permission'); 
     }
+ 
     
 
     public function StorePermission(Request $request){
@@ -32,6 +33,7 @@ class RoleController extends Controller
         
         return redirect()->route('all.permission')->with($notif);
     }
+
     public function Deletepermission($id){
         Permission::findOrFail($id)->delete();
         $notif = array(
@@ -41,12 +43,14 @@ class RoleController extends Controller
         
         return redirect()->route('all.permission')->with($notif);
     }
+
     public function Editpermission($id){
         $permission = Permission::findOrFail($id);
 
         
         return view('backend.permission.edit_permission', compact('permission')); 
     }
+
     public function Updatepermission(Request $request){
         $id = $request->id;
         $type = Permission::findOrFail($id)->update([
@@ -60,5 +64,10 @@ class RoleController extends Controller
         
         return redirect()->route('all.permission')->with($notif);
 
+    }
+
+
+    public function ImportPermission(){
+        return view('backend.permission.import_permission'); 
     }
 }
