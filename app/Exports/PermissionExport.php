@@ -12,6 +12,6 @@ class PermissionExport implements FromCollection
     */
     public function collection()
     {
-        return Permission::select('name', 'groupe_name');
+        return Permission::all();
     }
 }
