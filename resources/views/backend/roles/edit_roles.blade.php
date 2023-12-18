@@ -12,26 +12,20 @@
                         <div class="card">
                             <div class="card-body">
 
-                                <h6 class="card-title">Edit permission</h6>
+                                <h6 class="card-title">Edit Roles</h6>
 
-                                    <form id='myForm' class="forms-sample" method="POST" action={{ route('update.permission') }}
+                                    <form id='myForm' class="forms-sample" method="POST" action={{ route('update.roles') }}
                                     enctype="multipart/form-data"
                                     >
 
                                     @csrf
-                                    <input type="hidden"  name="id" value="{{ $permission->id }}">
+                                    <input type="hidden"  name="id" value="{{ $roles->id }}">
 
                                     <div class="mb-3 form-group">
                                         <label for="exampleInputUsername1" class="form-label"> Name</label>
                                         <input type="text" class="form-control" 
-                                            autocomplete="off" name="permission_name" value="{{ $permission->name }}" >
+                                            autocomplete="off" name="name" value="{{ $roles->name }}" >
                                         <label for="exampleInputUsername1" class="form-label"> Group Name</label>
-                                        <select type="text" class="form-select" 
-                                            autocomplete="off" name="permission_groupe_name" value="{{ $permission->groupe_name }}" >
-                                        <option selected="" disabled="">Selected</option>
-                                        <option value="type" {{  $permission->groupe_name == "type"? 'selected': ""  }} >Property Type</option>
-                                        <option value="amenities" {{  $permission->groupe_name == "amenities"? 'selected': ""  }}>Amenities</option>
-                                        </select> 
                                         
                                     </div>
 

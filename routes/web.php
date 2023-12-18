@@ -90,7 +90,7 @@ Route::middleware(['auth','role:admin'])->group(function () {
         Route::post('/store/roles/',  'StoreRoles')->name('store.roles');
         Route::get('/edit/roles/{id}',  'EditRoles')->name('edit.roles');
         Route::get('/delete/roles/{id}',  'DeleteRoles')->name('delete.roles');
-        Route::post('/update/roles/',  'UpdateRoles')->name('update.permission');
+        Route::post('/update/roles/',  'UpdateRoles')->name('update.roles');
 
     });
 });

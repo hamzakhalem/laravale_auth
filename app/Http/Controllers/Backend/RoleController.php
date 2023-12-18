@@ -132,15 +132,14 @@ class RoleController extends Controller
     public function UpdateRoles(Request $request){
         $id = $request->id;
         $type = Role::findOrFail($id)->update([
-            'name'=>$request->permission_name,
-            'groupe_name'=>$request->permission_groupe_name,  
+            'name'=>$request->name,
         ]);
         $notif = array(
-            'message' => "Permission updated successfully ",
+            'message' => "Role updated successfully ",
             'alert-type' => 'success' ,
         );
         
-        return redirect()->route('all.permission')->with($notif);
+        return redirect()->route('all.roles')->with($notif);
 
     }
 }
