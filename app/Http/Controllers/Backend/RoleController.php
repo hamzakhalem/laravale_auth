@@ -115,7 +115,7 @@ class RoleController extends Controller
     public function DeleteRoles($id){
         Role::findOrFail($id)->delete();
         $notif = array(
-            'message' => "Role deleted successfully ",
+            'message' => "Role Deleted Successfully ",
             'alert-type' => 'success' ,
         );
         
