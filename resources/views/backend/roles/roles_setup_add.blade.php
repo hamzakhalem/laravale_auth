@@ -24,17 +24,34 @@
                                         <select type="text" class="form-select" 
                                                 autocomplete="off" name="role_id" >
                                             <option selected="" disabled="">Selected</option>
-                                            @foreach ($role as $roles)
+                                            @foreach ($roles as $role)
                                                 <option value="{{ $role->id }}" >{{ $role->name }}</option>                                           
                                             @endforeach
 
                                         </select> 
                                     </div>
-                                    <div class="form-check mb-2">
-                                        <input type="checkbox" class="form-check-input" id="checkDefault">
-                                        <label class="form-check-label" for="checkDefault">
-                                            Pemission All
-                                        </label>
+
+                                    <hr>
+                                    @foreach ($permissions_groups as $group)
+                                        
+                                    @endforeach
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <div class="form-check mb-2">
+                                                <input type="checkbox" class="form-check-input" id="checkDefault">
+                                                <label class="form-check-label" for="checkDefault">
+                                                    {{ $group->groupe_name }}
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-9">
+                                            <div class="form-check mb-2">
+                                                <input type="checkbox" class="form-check-input" id="checkDefault">
+                                                <label class="form-check-label" for="checkDefault">
+                                                    Pemission All
+                                                </label>
+                                            </div>
+                                        </div>
                                     </div>
                                     <button type="submit" class="btn btn-primary me-2">Submit</button>
                                 </form>
