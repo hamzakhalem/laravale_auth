@@ -30,11 +30,14 @@
 
                                         </select> 
                                     </div>
-
+                                    <div class="form-check mb-2">
+                                        <input type="checkbox" class="form-check-input" id="checkDefault">
+                                        <label class="form-check-label" for="checkDefault">
+                                            All permissions
+                                        </label>
+                                    </div>
                                     <hr>
                                     @foreach ($permissions_groups as $group)
-                                        
-                                    @endforeach
                                     <div class="row">
                                         <div class="col-3">
                                             <div class="form-check mb-2">
@@ -44,15 +47,26 @@
                                                 </label>
                                             </div>
                                         </div>
+                                        @php
+                                            $permissions = App\Models\User::getPermissionByGroupName($group->groupe_name) 
+                                        @endphp
                                         <div class="col-9">
-                                            <div class="form-check mb-2">
-                                                <input type="checkbox" class="form-check-input" id="checkDefault">
-                                                <label class="form-check-label" for="checkDefault">
-                                                    Pemission All
-                                                </label>
-                                            </div>
+                                            @foreach ($permissions as $permission)
+                                                <div class="form-check mb-2">
+                                                    <input type="checkbox" class="form-check-input"  name="permission[]"
+                                                        id="checkDefault{{ $permission->id }}" value="{{ $permission->id }}"
+                                                        >
+                                                    <label class="form-check-label" for="checkDefault{{ $permission->id }}">
+                                                        {{ $permission->name }}
+                                                    </label>
+                                                </div>
+                                            @endforeach
+                                        
                                         </div>
                                     </div>
+                                    <br>
+                                    <hr>
+                                    @endforeach
                                     <button type="submit" class="btn btn-primary me-2">Submit</button>
                                 </form>
 

@@ -45,4 +45,8 @@ class User extends Authenticatable
         $permission_groups= DB::table('permissions')->select('groupe_name')->groupBy('groupe_name')->get();
         return $permission_groups;
     }
+    public static function getPermissionByGroupName($groupe_name){
+        $permission= DB::table('permissions')->select('name', 'id')->where('groupe_name', $groupe_name )->get();
+        return $permission;
+    }
 }
