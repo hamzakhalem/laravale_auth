@@ -31,8 +31,8 @@
                                         </select> 
                                     </div>
                                     <div class="form-check mb-2">
-                                        <input type="checkbox" class="form-check-input" id="checkDefault">
-                                        <label class="form-check-label" for="checkDefault">
+                                        <input type="checkbox" class="form-check-input" id="checkDefaultmain">
+                                        <label class="form-check-label" for="checkDefaultmain">
                                             All permissions
                                         </label>
                                     </div>
@@ -80,6 +80,14 @@
         </div>
 
     </div>
-
+    <script type="text/javascript">
+        $('#checkDefaultmain').on('click', function(){
+            if($(this).is(':checked')){
+                $('input[type=checkbox]').prop('checked', true)
+            }
+            else 
+                $('input[type=checkbox]').prop('checked', false)
+        });
+    </script>
 
 @endsection
