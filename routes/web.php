@@ -93,6 +93,6 @@ Route::middleware(['auth','role:admin'])->group(function () {
         Route::post('/update/roles/',  'UpdateRoles')->name('update.roles');
         
         Route::post('/store/roles/permission',  'rolesPermissionStore')->name('roles.permission.store');
-        Route::get('/add/roles/',  'addRolesPermission')->name('add.roles.permission');
+        Route::get('/add/roles/permission',  'addRolesPermission')->name('add.roles.permission');
     });
 });
