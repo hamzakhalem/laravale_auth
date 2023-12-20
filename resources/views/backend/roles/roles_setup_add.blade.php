@@ -14,7 +14,7 @@
 
                                 <h6 class="card-title">Add Roles in permission</h6>
 
-                                    <form id='myForm' class="forms-sample" method="POST" action={{ route('store.roles') }}
+                                    <form id='myForm' class="forms-sample" method="POST" action={{ route('roles.permission.store') }}
                                     enctype="multipart/form-data"
                                 >
                                     @csrf

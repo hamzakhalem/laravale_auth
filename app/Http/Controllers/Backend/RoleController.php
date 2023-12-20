@@ -150,4 +150,10 @@ class RoleController extends Controller
         $permissions_groups = User::getPermissionGroups();
         return view('backend.roles.roles_setup_add', compact('roles', 'permissions', 'permissions_groups')); 
     }
+
+    public function rolesPermissionStore(Request $request){
+        $data = array();
+        $permissions = $request->permission;
+        return redirect()->route('all.roles')->with($notif);
+    }
 }
