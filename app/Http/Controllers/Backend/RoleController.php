@@ -167,4 +167,10 @@ class RoleController extends Controller
         );
         return redirect()->route('all.roles')->with($notif);
     }
+
+    public function allRolesPermission(){
+        $roles = Role::all();
+
+        return view('backend.roles.roles_setup_all', compact('roles')); 
+    }
 }
